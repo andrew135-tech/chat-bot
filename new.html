@@ -9,7 +9,7 @@
     <h1>Message</h1>
     <input type="text" id="userInput" placeholder="Type Message...">
     <button onclick="sendMessage()">Submit</button>
-    <button oneclick="clearMessages()">Clear</button>
+    <button onclick="clearMessages()">Clear Messages</button>
     <div id="messages"></div>
 
     <script>
@@ -17,9 +17,9 @@
         const firebaseConfig = {
             apiKey: "AIzaSyDLjCTxnmPQWDVnnmOxBHKjQbJXaMJqyEI",
             authDomain: "chat-app-4399f.firebaseapp.com",
-            databaseURl: "https://console.firebase.google.com/project/chat-app-4399f/database/chat-app-4399f-default-rtdb/data/~2F",
+            databaseURL: "https://chat-app-4399f-default-rtdb.firebaseio.com",
             projectId: "chat-app-4399f",
-            storageBucket: "chat-app-4399f.firebasestorage.app",
+            storageBucket: "chat-app-4399f.appspot.com",
             messagingSenderId: "198541271284",
             appId: "1:198541271284:web:850eb60681c12f9995bea1"
         };
@@ -32,7 +32,7 @@
             database.ref('messages').push(message);
             document.getElementById('userInput').value = '';
         }
-        
+
         function clearMessages() {
             database.ref('messages').remove();
             document.getElementById('messages').innerHTML = '';
