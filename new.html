@@ -31,6 +31,11 @@
             database.ref('messages').push(message);
             document.getElementById('userInput').value = '';
         }
+        
+        function clearMessages() {
+            database.ref('messages').remove();
+            document.getElementById('messages').innerHTML = '';
+        }
 
         database.ref('messages').on('child_added', function(snapshot) {
             const msg = snapshot.val();
