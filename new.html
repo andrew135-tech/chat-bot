@@ -30,7 +30,7 @@
 
         function sendMessage() {
             const message = document.getElementById('userInput').value;
-            database.ref('messages').push(user,message);
+            database.ref('messages').push(message);
             document.getElementById('userInput').value = '';
         }
 
