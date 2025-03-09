@@ -19,8 +19,11 @@
             function log_in(){
                 const user = document.getElementById('userInput').value;
                 const pass = document.getElementById('userPassword').value;
-                document.getElementById('output').innerText="youre in";
-                window.open("new.html","_blank")
+                if(pass===users[user]){
+                    document.getElementById('output').innerText="youre in";
+                    window.open("new.html","_blank")
+                }
+                document.getElementById('output').innerText="To get acces speak to the person that gave this website info";
         }
 
     </script>
